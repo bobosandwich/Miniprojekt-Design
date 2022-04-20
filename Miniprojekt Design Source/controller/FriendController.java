@@ -9,17 +9,14 @@ import model.*;
  * @version (a version number or a date)
  */
 public class FriendController {
-    private FriendContainer friends;
     
     
-    public FriendController() {
-        // initialise instance variables
-        friends = FriendContainer.getInstance();
-    }
+    
+   
 
-    public void addFriend(String name){
-        Friend newFriend = new Friend(name);
-        friends.addFriend(newFriend);
+    public void addFriend(String name, String address, String postalCode, String city, String phone){
+        Friend newFriend = new Friend(name, address, postalCode, city, phone);
+        FriendContainer.getInstance().addFriend(newFriend);
         
     }
 }
