@@ -1,4 +1,6 @@
 package tui;
+import controller.*;
+import model.*;
 
 
 /**
@@ -8,13 +10,18 @@ package tui;
  * @version 0.1.0 Initial draft version 
  */
 public class LoanMenu {
-    // instance variables 
+    private LoanController loanController;
+    private CopyController copyController;
+    private FriendController friendController;
 
     /**
      * Constructor for objects of class LoanMenu
      */
     public LoanMenu() {
         // initialise instance variables
+        loanController = new LoanController();
+        
+        
        
     }
     
