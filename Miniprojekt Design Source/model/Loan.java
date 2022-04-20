@@ -24,6 +24,7 @@ public class Loan
         this.loanNumber = loanNumber;
         this.borrowDate = borrowDate;
         this.endDate = endDate;
+        this.returnedDate = "";
         this.copy = copy;
         this.friend = friend;
     }
@@ -32,13 +33,10 @@ public class Loan
         this.returnedDate = date;    
     }
 
-    public void getReturnedDate(){
-        if(returnedDate != null){
-            System.out.println("Copy is returned " + returnedDate);
-        }
+    public String getReturnedDate(){
         
-        else{
-            System.out.println("Copy is not returned yet");
-        }
+        return returnedDate;
     }
+    
+    
 }
