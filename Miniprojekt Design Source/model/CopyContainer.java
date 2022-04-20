@@ -14,7 +14,6 @@ public class CopyContainer {
      * Constructor for objects of class StudentContainer
      */
     private CopyContainer() {
-        // initialise instance variables
         copies = new ArrayList<>();
     }
     
@@ -29,5 +28,25 @@ public class CopyContainer {
         copies.add(copy);
     }
     
-    //public void findCopy(int serialNumber){
+    public Copy findCopy (int serialNumber){
+        int index = 0;
+        boolean found = false;
+
+        while(index < copies.size() && !found){
+            Copy copy = copies.get(index);
+            if(copy.getSerialNumber()==(serialNumber)){
+                found = true;}
+
+            else{
+                index++;
+            }
+        }
+        if(found){
+            return copies.get(index);
+        }
+        else{
+            return null;
+        }
+    }
 }
+

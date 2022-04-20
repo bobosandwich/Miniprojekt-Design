@@ -33,7 +33,24 @@ public class FriendContainer {
         friends.add(friend);
     }
     
-    public void findFriend(String name){
-        
+    public Friend findFriend (String name){
+        int index = 0;
+        boolean found = false;
+
+        while(index < friends.size() && !found){
+            Friend friend = friends.get(index);
+            if(friend.getName().equals(name)){
+                found = true;}
+
+            else{
+                index++;
+            }
+        }
+        if(found){
+            return friends.get(index);
+        }
+        else{
+            return null;
+        }
     }
 }

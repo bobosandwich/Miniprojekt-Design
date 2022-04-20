@@ -28,6 +28,9 @@ public class Friend
         this.phone = phone;
     }
 
+    public String getName(){
+        return name;
+    }
     
     }
 

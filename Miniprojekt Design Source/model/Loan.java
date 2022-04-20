@@ -13,15 +13,19 @@ public class Loan
     private String borrowDate;
     private String endDate;
     private String returnedDate;
+    private Copy copy;
+    private Friend friend;
 
     /**
      * Constructor for objects of class Loan
      */
-    public Loan(String loanNumber, String borrowDate, String endDate)
+    public Loan(String loanNumber, String borrowDate, String endDate, Copy copy, Friend friend)
     {
         this.loanNumber = loanNumber;
         this.borrowDate = borrowDate;
         this.endDate = endDate;
+        this.copy = copy;
+        this.friend = friend;
     }
 
     public void setReturnedDate(String date){

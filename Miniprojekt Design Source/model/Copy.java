@@ -25,5 +25,8 @@ public class Copy
         this.purchasePrice = purchasePrice;
     }
 
+    public int getSerialNumber(){
+        return serialNumber;
+    }
     
 }

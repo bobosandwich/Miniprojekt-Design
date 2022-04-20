@@ -10,14 +10,15 @@ import model.*;
  */
 public class FriendController {
     
-    
-    
-   
-
     public void addFriend(String name, String address, String postalCode, String city, String phone){
         Friend newFriend = new Friend(name, address, postalCode, city, phone);
         FriendContainer.getInstance().addFriend(newFriend);
         
     }
-}
+    
+    public Friend findFriend(String name){
+    return FriendContainer.getInstance().findFriend(name);  
+    }
+    }
+
 
