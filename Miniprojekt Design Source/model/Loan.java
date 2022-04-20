@@ -24,7 +24,7 @@ public class Loan
         this.loanNumber = loanNumber;
         this.borrowDate = borrowDate;
         this.endDate = endDate;
-        this.returnedDate = "";
+        this.returnedDate = null;
         this.copy = copy;
         this.friend = friend;
     }
@@ -34,9 +34,11 @@ public class Loan
     }
 
     public String getReturnedDate(){
-        
         return returnedDate;
     }
     
+    public String getLoanNumber(){
+        return loanNumber;
+    }
     
 }

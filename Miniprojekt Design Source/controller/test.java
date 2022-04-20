@@ -41,23 +41,18 @@ public class test
     public void setUp()
     {
         friendCo1 = new controller.FriendController();
-        friendCo2 = new controller.FriendController();
-        friendCo3 = new controller.FriendController();
         friendCo1.addFriend("Julian", "Havnegade", "9000", "Ålborg", "25263395");
-        friendCo2.addFriend("Kenni", "Vestergade 22", "7500", "Skive", "55609980");
-        friendCo3.addFriend("Philip", "Strandvejen", "5000", "Ribe", "22445590");
+        friendCo1.addFriend("Kenni", "Vestergade 22", "7500", "Skive", "55609980");
+        friendCo1.addFriend("Philip", "Strandvejen", "5000", "Ribe", "22445590");
         copyCont1 = new controller.CopyController();
         copyCont1.addCopy("Metallica", 11, "Januar", 100);
-        copyCont2 = new controller.CopyController();
-        copyCont2.addCopy("Michael Jackson", 22, "igår", 200);
-        copyCont3 = new controller.CopyController();
-        copyCont3.addCopy("Spice Girls", 33, "igår", 300);
+        copyCont1.addCopy("Michael Jackson", 22, "igår", 200);
+        copyCont1.addCopy("Spice Girls", 33, "igår", 300);
         loanCont1 = new controller.LoanController();
-        loanCont1.addLoan("1", "igår", "imorgen");
-        loanCont2 = new controller.LoanController();
-        loanCont2.addLoan("2", "igår", "imorgen");
-        loanCont3 = new controller.LoanController();
-        loanCont3.addLoan("3", "igår", "imorgen");
+        loanCont1.addCopyToLoan(11);
+        loanCont1.addFriendToLoan("Kenni");
+        loanCont1.addLoan("11", "Januar", "Februar");
+        loanCont1.getReturnedDate("11");
     }
 
     /**

@@ -12,7 +12,6 @@ public class LoanController {
     private CopyController Copycontroller;
     private Friend currentFriend = null;
     private Copy currentCopy = null;
-    private Loan loan;
 
     public LoanController(){
         FriendController = new FriendController();
@@ -23,15 +22,13 @@ public class LoanController {
     public Friend addFriendToLoan(String name){
         currentFriend = FriendController.findFriend(name);
         return currentFriend;
-        
 
     }
 
     public Copy addCopyToLoan(int serialNumber){
         currentCopy = Copycontroller.findCopy(serialNumber);
-            return currentCopy;
-        }
-    
+        return currentCopy;
+    }
 
     public void addLoan(String loanNumber, String borrowDate, String endDate){
         Loan newLoan = new Loan(loanNumber, borrowDate, endDate, currentCopy, currentFriend);
@@ -39,15 +36,15 @@ public class LoanController {
 
     }
 
-    
-    public void getReturnedDate(){
-        if(loan.getReturnedDate()!= null){
-            System.out.println("Copy is returned " + loan.getReturnedDate());
+    public String getReturnedDate(String loanNumber){
+        if(LoanContainer.getInstance().findReturnedDate(loanNumber) != null){
+
         }
-        
-        else{
-            System.out.println("Copy is not returned yet");
-        }
+        return LoanContainer.getInstance().findReturnedDate(loanNumber);
+    }
+
+    public void returned(String loanNumber, String date){
+        LoanContainer.getInstance().findLoanNumber(loanNumber, date);
+
     }
 }
-
