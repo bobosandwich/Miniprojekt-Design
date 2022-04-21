@@ -1,6 +1,7 @@
 package tui;
 import controller.*;
 import model.*;
+import java.util.Scanner;
 
 
 /**
@@ -20,9 +21,8 @@ public class LoanMenu {
     public LoanMenu() {
         // initialise instance variables
         loanController = new LoanController();
-        
-        
-       
+        copyController = new CopyController();
+        friendController = new FriendController();
     }
     
     public void start() {
@@ -30,7 +30,7 @@ public class LoanMenu {
         while (running) {
             int choice = writeLoanMenu();
             if (choice == 1) {
-                System.out.println(" Denne er ikke implementeret endnu!");
+                opretLånBrugerInteraktion();
             }
             //TODO perhaps you need further menu items?
             else {
@@ -47,5 +47,32 @@ public class LoanMenu {
         int choice = menu.prompt();
 
         return choice;
+    }
+    
+    public void opretLånBrugerInteraktion(){
+        Copy copy = null;
+        Friend friend = null;
+        Scanner reader = new Scanner(System.in);
+        while(copy == null){
+            System.out.println("Enter serialnumber");
+            int input = reader.nextInt();
+            copy = loanController.addCopyToLoan(input);
+            
+            if(copy == null){
+                System.out.println("This copy does not exist in the system");
+            }
+        }
+    
+        while(friend == null){
+            System.out.println("Enter name");
+            String input = reader.nextLine();
+            friend = loanController.addFriendToLoan(input);
+            
+            if(friend == null){
+                System.out.println("This friend does not exist");
+            }
+        }
+        
+        loanController.addLoan();
     }
 }
