@@ -18,5 +18,31 @@ public class FriendController {
     public Friend findFriend(String name){
         return FriendContainer.getInstance().findFriend(name);  
     }
+
+    // Update Friend Method
+    public boolean updateFriend(String name, Friend newData){
+        boolean success = false;
+        Friend friend = FriendContainer.getInstance().findFriend(name);
+        if (friend != null && newData != null){
+            if (newData.getAddress() != null){
+                friend.setAddress(newData.getAddress());
+            }
+            if (newData.getPostalCode() != null){
+                friend.setAddress(newData.getAddress());
+            }
+            if (newData.getCity() != null){
+                friend.setCity(newData.getCity());
+            }
+            if (newData.getPhone() != null){
+                friend.setPhone(newData.getPhone());
+            }
+            FriendContainer.getInstance().deleteFriend(name);
+            FriendContainer.getInstance().addFriend(friend);
+            if (friend.equals(FriendContainer.getInstance().findFriend(name))){
+                success = true;
+            }
+        }
+        return success;
+    }
 }
 

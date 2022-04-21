@@ -22,10 +22,42 @@ public class Friend
     public Friend(String name, String address, String postalCode, String city, String phone)
     {
         this.name = name;
-        this.address = address;
-        this.postalCode = postalCode;
-        this.city = city;
+        this.setAddress(address);
+        this.setPostalCode(postalCode);
+        this.setCity(city);
+        this.setPhone(phone);
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getName(){
