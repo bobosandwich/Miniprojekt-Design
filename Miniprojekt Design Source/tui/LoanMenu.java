@@ -36,7 +36,7 @@ public class LoanMenu {
         while (running) {
             int choice = writeLoanMenu();
             if (choice == 1) {
-                opretLånBrugerInteraktion();
+                createLoanUserInteraction();
             }
             //TODO perhaps you need further menu items?
             else {
@@ -47,22 +47,22 @@ public class LoanMenu {
 
     private int writeLoanMenu() {
         // creates a keyboard object to read input
-        TextOptions menu = new TextOptions("\n ***** Udlånsmenu *****", "Tilbage"); 
-        menu.addOption("Opret lån");
-        menu.addOption("delete");
+        TextOptions menu = new TextOptions("\n ***** Udl�nsmenu *****", "Tilbage"); 
+        menu.addOption("Opret l�n");
+        menu.addOption("slet");
         //TODO if you need more menu items they have to go here
         int choice = menu.prompt();
 
         return choice;
     }
     
-    public void opretLånBrugerInteraktion(){
+    public void createLoanUserInteraction(){
         Copy copy = null;
         Friend friend = null;
         Scanner reader = new Scanner(System.in);
 
         while(copy == null){
-            System.out.println("Write serialnumber: ");
+            System.out.println("Indtast serienummer: ");
             int input = reader.nextInt();
             copy = loanController.findGoThroughLpContainer(input);
             
@@ -70,17 +70,17 @@ public class LoanMenu {
             //This get called after we have chosen our copy - this might be another method
             
             if(copy == null){
-                System.out.println("This copy does not exist in the system");
+                System.out.println("Denne kopi eksisterer ikke i systemet");
             }
         }
 
         while(friend == null){
-            System.out.println("Enter name");
+            System.out.println("Indtast navn");
             String input = reader.nextLine();
             friend = loanController.addFriendToLoan(input);
             
             if(friend == null){
-                System.out.println("This friend does not exist");
+                System.out.println("Denne ven eksisterer ikke i systemet");
             }
         }
         
