@@ -1,14 +1,12 @@
 package model;
 import java.util.ArrayList;
 
-
 /**
  * Write a description of class FriendContainer here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-
 
 
 public class FriendContainer {
@@ -21,18 +19,18 @@ public class FriendContainer {
         // initialise instance variables
         friends = new ArrayList<>();
     }
-    
+
     public static FriendContainer getInstance() {
         if (instance == null) {
             instance = new FriendContainer();
         }
         return instance;
     }
-    
+
     public void addFriend(Friend friend){
         friends.add(friend);
     }
-    
+
     public Friend findFriend (String name){
         int index = 0;
         boolean found = false;
@@ -53,4 +51,22 @@ public class FriendContainer {
             return null;
         }
     }
+
+    public void deleteFriend(String name){
+        Friend friend = findFriend(name); 
+        if(friend != null){
+            friends.remove(friend); 
+
+        }
+
+    }
+    //Robert
+    // public void setAddress(String name, String newAddress, String newPostalCode, String newCity, String newPhone){
+    // Friend friend = findFriend(name);
+    // friend.setAddress(newAddress);
+    // friend.setPostalCode(newPostalCode);
+    // friend.setCity(newCity);
+    // friend.setCity(newPhone);
+
+    // }
 }
