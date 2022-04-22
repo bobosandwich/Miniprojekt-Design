@@ -48,16 +48,34 @@ public class LpContainer
         return tempLp;
 }
 
-public Copy findCopy(int serialNumber, int barcode){
-    Lp lp = findLp(barcode);
-    ArrayList<Copy> list = lp.getCollection();
-    Copy copy = null;
-    for(int index = 0; index < list.size(); index++){
-        if(list.get(index).getSerialNumber() == serialNumber){
-            copy = list.get(index);
+public Copy findCopy(int serialNumber){
+    Copy tempCopy = null;
+    boolean found = false;
+    int index = 0;
+    while(index < lps.size() && !found){
+        tempCopy = lps.get(index).findCopy(serialNumber);
+        if(tempCopy == null){
+            index++;
+        } else if(tempCopy.getSerialNumber() == serialNumber){
+            found = true;
         }
     }
-    return copy;
+    return tempCopy;
+}
+
+public Copy TempFindCopy(int seriaNUmber){
+    Copy tempCopy = null;
+    boolean found = false;
+    int index = 0;
+    while(index < lps.size() && !found){
+        tempCopy = lps.get(index).findCopy(seriaNUmber);
+        if(tempCopy.getSerialNumber() == seriaNUmber){
+            found = true;
+        } else{
+            index++;
+        }
+    }
+    return tempCopy;
 }
 
 public void AddCopyToLp(int barcode, int serialNumber, String purchaseDate, int purchasePrice){

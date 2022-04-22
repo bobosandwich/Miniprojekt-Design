@@ -30,8 +30,14 @@ public class Lp
         return barCode;
     }
     
-    public ArrayList getCollection(){
-        return currentCopyCollection;
+    public Copy findCopy(int serialNumber){
+        Copy tempCopy = null;
+        for(int index = 0; index < currentCopyCollection.size(); index++){
+            if(currentCopyCollection.get(index).getSerialNumber() == serialNumber){
+                tempCopy = currentCopyCollection.get(index);
+            }
+        }
+        return tempCopy;
     }
     
     

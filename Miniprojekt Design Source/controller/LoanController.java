@@ -28,8 +28,9 @@ public class LoanController {
 
     }
     
-    public ArrayList findLpCollection(int barcode){
-        return lpController.findLpCollection(barcode);
+    public Copy findGoThroughLpContainer(int serialNumber){
+        currentCopy = lpController.findGoThroughLpContainer(serialNumber);
+        return lpController.findGoThroughLpContainer(serialNumber);
     }
 
     public Copy addCopyToLoan(Copy copy){

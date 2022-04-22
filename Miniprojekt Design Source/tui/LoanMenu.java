@@ -62,8 +62,10 @@ public class LoanMenu {
         Scanner reader = new Scanner(System.in);
 
         while(copy == null){
-            System.out.println("Find a LP - write a barcode");
+            System.out.println("Write serialnumber: ");
             int input = reader.nextInt();
+            copy = loanController.findGoThroughLpContainer(input);
+            
            
             //This get called after we have chosen our copy - this might be another method
             
@@ -71,7 +73,7 @@ public class LoanMenu {
                 System.out.println("This copy does not exist in the system");
             }
         }
-    
+
         while(friend == null){
             System.out.println("Enter name");
             String input = reader.nextLine();

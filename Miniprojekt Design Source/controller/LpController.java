@@ -21,21 +21,13 @@ public class LpController
         LpContainer.getInstance().AddCopyToLp(barcode, serialNumber, purchaseDate,purchasePrice);
     }
     
-    public ArrayList findLpCollection(int barcode){
-        Lp lp = null;
-        ArrayList<Copy> tempCollection = null;
-        lp = LpContainer.getInstance().findLp(barcode);
-        tempCollection = lp.getCollection();
-        return tempCollection;
-    }
-    
     public void findlp(int barcode){
         Lp lp = LpContainer.getInstance().findLp(barcode);
         System.out.print(lp);
     }
     
-    public Copy findCopy(int serialNumber, int barcode){
-        return LpContainer.getInstance().findCopy(serialNumber, barcode);
+    public Copy findGoThroughLpContainer(int serialNumber){
+        return LpContainer.getInstance().findCopy(serialNumber);
     }
     
 }
