@@ -60,13 +60,5 @@ public class FriendContainer {
         }
 
     }
-    //Robert
-    // public void setAddress(String name, String newAddress, String newPostalCode, String newCity, String newPhone){
-    // Friend friend = findFriend(name);
-    // friend.setAddress(newAddress);
-    // friend.setPostalCode(newPostalCode);
-    // friend.setCity(newCity);
-    // friend.setCity(newPhone);
-
-    // }
+    
 }

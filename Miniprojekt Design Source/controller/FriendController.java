@@ -27,7 +27,7 @@ public class FriendController {
                 friend.setAddress(newData.getAddress());
             }
             if (newData.getPostalCode() != null){
-                friend.setAddress(newData.getAddress());
+                friend.setPostalCode(newData.getPostalCode());
             }
             if (newData.getCity() != null){
                 friend.setCity(newData.getCity());
