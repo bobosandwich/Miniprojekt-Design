@@ -26,7 +26,7 @@ public class TextInput {
         int number = 0;
         printQuesiton(question);
         while (!keyboard.hasNextInt()){
-            System.out.println("Input skal være et tal - prøv igen");
+            System.out.println("Input skal vaere et tal - proev igen");
             keyboard.nextLine();
         }
         number = keyboard.nextInt();

@@ -10,14 +10,12 @@ import java.util.ArrayList;
  */
 public class LoanController {
     private FriendController FriendController;
-    private CopyController Copycontroller;
     private LpController lpController;
     private Friend currentFriend = null;
     private Copy currentCopy = null;
 
     public LoanController(){
         FriendController = new FriendController();
-        Copycontroller = new CopyController();
         lpController = new LpController();
 
     }
@@ -28,15 +26,11 @@ public class LoanController {
 
     }
     
-    public Copy findGoThroughLpContainer(int serialNumber){
-        currentCopy = lpController.findGoThroughLpContainer(serialNumber);
-        return lpController.findGoThroughLpContainer(serialNumber);
-    }
-
-    public Copy addCopyToLoan(Copy copy){
-        currentCopy = copy;
+    public Copy addCopyToLoan(int serialNumber){
+        currentCopy = lpController.findCopy(serialNumber);
         return currentCopy;
     }
+
 
     public void addLoan(){
         Loan newLoan = new Loan(currentCopy, currentFriend);

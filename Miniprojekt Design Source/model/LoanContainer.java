@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class LoanContainer {
     private static LoanContainer instance;
     private ArrayList<Loan> loans;
-    private Loan loan;
 
     /**
      * Constructor for objects of class StudentContainer
@@ -54,7 +53,7 @@ public class LoanContainer {
         }
     }
 
-    public void findLoanNumber(String loanNumber, String date){
+    public void findLoanNumberAndSetReturnDate(String loanNumber, String date){
 
         int index = 0;
         boolean found = false;

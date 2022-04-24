@@ -26,7 +26,7 @@ public class LpController
         System.out.print(lp);
     }
     
-    public Copy findGoThroughLpContainer(int serialNumber){
+    public Copy findCopy(int serialNumber){
         return LpContainer.getInstance().findCopy(serialNumber);
     }
     

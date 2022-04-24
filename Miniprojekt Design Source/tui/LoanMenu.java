@@ -47,8 +47,8 @@ public class LoanMenu {
 
     private int writeLoanMenu() {
         // creates a keyboard object to read input
-        TextOptions menu = new TextOptions("\n ***** Udlånsmenu *****", "Tilbage"); 
-        menu.addOption("Opret lån");
+        TextOptions menu = new TextOptions("\n ***** Udlaaensmenu *****", "Tilbage"); 
+        menu.addOption("Opret laan");
         menu.addOption("slet");
         //TODO if you need more menu items they have to go here
         int choice = menu.prompt();
@@ -60,14 +60,12 @@ public class LoanMenu {
         Copy copy = null;
         Friend friend = null;
         Scanner reader = new Scanner(System.in);
+        Scanner readerName = new Scanner(System.in);
 
         while(copy == null){
             System.out.println("Indtast serienummer: ");
             int input = reader.nextInt();
-            copy = loanController.findGoThroughLpContainer(input);
-            
-           
-            //This get called after we have chosen our copy - this might be another method
+            copy = loanController.addCopyToLoan(input);
             
             if(copy == null){
                 System.out.println("Denne kopi eksisterer ikke i systemet");
@@ -76,7 +74,7 @@ public class LoanMenu {
 
         while(friend == null){
             System.out.println("Indtast navn");
-            String input = reader.nextLine();
+            String input = readerName.nextLine();
             friend = loanController.addFriendToLoan(input);
             
             if(friend == null){

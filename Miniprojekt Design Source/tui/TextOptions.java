@@ -52,7 +52,7 @@ public class TextOptions {
             lowerBound = 1;
         }
         while (choice < lowerBound || choice >= size) {
-           choice = TextInput.inputNumber("Vælg et tal"); 
+           choice = TextInput.inputNumber("Vaelg et tal"); 
         }
         return choice;
     }

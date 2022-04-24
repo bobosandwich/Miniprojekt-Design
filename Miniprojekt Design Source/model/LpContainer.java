@@ -54,22 +54,7 @@ public Copy findCopy(int serialNumber){
     int index = 0;
     while(index < lps.size() && !found){
         tempCopy = lps.get(index).findCopy(serialNumber);
-        if(tempCopy == null){
-            index++;
-        } else if(tempCopy.getSerialNumber() == serialNumber){
-            found = true;
-        }
-    }
-    return tempCopy;
-}
-
-public Copy TempFindCopy(int seriaNUmber){
-    Copy tempCopy = null;
-    boolean found = false;
-    int index = 0;
-    while(index < lps.size() && !found){
-        tempCopy = lps.get(index).findCopy(seriaNUmber);
-        if(tempCopy.getSerialNumber() == seriaNUmber){
+        if(tempCopy != null){
             found = true;
         } else{
             index++;
@@ -77,6 +62,7 @@ public Copy TempFindCopy(int seriaNUmber){
     }
     return tempCopy;
 }
+
 
 public void AddCopyToLp(int barcode, int serialNumber, String purchaseDate, int purchasePrice){
     Lp lp = null;

@@ -49,8 +49,6 @@ public class test
         lpController.addCopyToLp(1, 123, "21", 500);
         lpController.addCopyToLp(2, 163, "25", 340);
         lpController.addCopyToLp(3, 113, "21", 300);
-        lpController.findGoThroughLpContainer(163);
-        
     }
 
     /**
