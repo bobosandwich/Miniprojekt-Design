@@ -47,7 +47,7 @@ public class LoanController {
     }
 
     public void returned(String loanNumber, String date){
-        LoanContainer.getInstance().findLoanNumber(loanNumber, date);
+        LoanContainer.getInstance().findLoanNumberAndSetReturnDate(loanNumber, date);
 
     }
 }
